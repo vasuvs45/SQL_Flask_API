@@ -1,0 +1,22 @@
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+marshmallow-sqlalchemy 0.26.1 requires marshmallow>=3.0.0, but you have marshmallow 2.20.1 which is incompatible.
+
+
+
+mssql://user:pwd!@PATH_TO_MSSQL_LOCATION?driver=SQL+Server+Native+Client+11.0
+mssql://postgres:Numerouno@369!VASUSHARMA\SQLEXPRESS?driver=SQL+Server+Native+Client+11.0
+
+
+pwd: Numerouno@369
+DB : Vasu_Db
+
+
+
+
+
+params = urllib.parse.quote_plus('DRIVER={SQL Server};SERVER=VASUSHARMA\SQLEXPRESS;DATABASE=Vasu_Db;Trusted_Connection=yes;')
+app.config['SQLALCHEMY_DATABASE_URI'] = "mssql+pyodbc:///?odbc_connect=%s" % params
+
+
+SQLALCHEMY_DATABASE_URI = mssql+pyodbc:///?odbc_connect="DRIVER={ODBC Driver 13 for SQL Server};SERVER=<server>;DATABASE=<database>;UID=<username>;PWD=Numerouno@369
+SQLALCHEMY_TRACK_MODIFICATIONS = False
